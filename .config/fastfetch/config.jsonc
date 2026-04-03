@@ -1,0 +1,38 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/schemas/ConfigSchema.json",
+  "logo": {
+    "source": "arch-linux-small",
+    "padding": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "key": {
+      "length": 10
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "wm",
+    "terminal",
+    "cpu",
+    "memory",
+    "disk"
+  ],
+  "color": {
+    "keys": ["34"]
+  },
+  "terminal": {
+    "type": "auto"
+  }
+}

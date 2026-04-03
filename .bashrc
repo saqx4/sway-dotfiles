@@ -9,6 +9,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# System info on login
+fastfetch 2>/dev/null
+
 # Sway helpers
 alias screenshot='~/.local/bin/screenshot.sh'
 alias powermenu='~/.local/bin/powermenu.sh'
