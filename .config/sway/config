@@ -32,13 +32,16 @@ input type:touchpad {
     click_method clickfinger
 }
 
+# Mouse bindings for moving and resizing
+floating_modifier $mod normal
+
 # ========================================
 # Output Configuration
 # ========================================
 # Auto-detect displays (adjust if needed)
-output * {
-    bg #1a1a2e solid_color
-}
+# output * {
+#     bg #1a1a2e solid_color
+# }
 
 # ========================================
 # Appearance
@@ -74,8 +77,8 @@ bar {
 # Notifications daemon
 exec mako
 
-# Wallpaper
-exec swaybg -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png -m fill 2>/dev/null || exec swaybg -c "#1a1a2e"
+# Wallpaper (sway native)
+output VGA-1 bg /home/sasa/Pictures/Wallpapers/wallhaven-5ydvl1.jpg fill
 
 # Idle daemon (lock screen & power management)
 exec swayidle -w \

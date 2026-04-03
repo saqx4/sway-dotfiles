@@ -1,6 +1,9 @@
 *
 !/.config/
-!/.config/**
+!/.config/sway/
+!/.config/waybar/
+!/.config/mako/
+!/.config/rofi/
 !/.bashrc
 !/.bash_profile
 !/.local/bin/
