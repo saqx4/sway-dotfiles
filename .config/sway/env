@@ -1,0 +1,34 @@
+# Environment variables for Sway
+# Place this in ~/.config/sway/env
+
+# XDG Desktop Portal for proper app integration
+XDG_CURRENT_DESKTOP=sway
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_DESKTOP=sway
+
+# GTK/Qt theming
+GTK_THEME=Adwaita:dark
+QT_QPA_PLATFORM=wayland
+QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+GDK_BACKEND=wayland,x11
+CLUTTER_BACKEND=wayland
+
+# SDL
+SDL_VIDEODRIVER=wayland
+
+# Mozilla
+MOZ_ENABLE_WAYLAND=1
+
+# Electron apps
+NIFE_ELECTRON_OZONE_PLATFORM=wayland
+
+# IME input
+GLFW_IM_MODULE=ibus
+
+# Cursor
+XCURSOR_SIZE=24
+XCURSOR_THEME=Adwaita
+
+# GTK Icon Theme
+GTK_ICON_THEME=Papirus
+

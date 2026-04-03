@@ -1,0 +1,222 @@
+# Sway Configuration File
+# Daily driver setup
+
+# Default config fallback
+include /etc/sway/config.d/*
+
+# ========================================
+# Variables
+# ========================================
+set $mod Mod4
+set $term kitty
+set $menu rofi -show drun
+set $browser firefox
+set $filemgr thunar
+set $editor code
+
+# ========================================
+# Input Configuration
+# ========================================
+input * {
+    xkb_layout us
+    xkb_variant ""
+    repeat_delay 300
+    repeat_rate 50
+}
+
+# Touchpad configuration
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    click_method clickfinger
+}
+
+# ========================================
+# Output Configuration
+# ========================================
+# Auto-detect displays (adjust if needed)
+output * {
+    bg #1a1a2e solid_color
+}
+
+# ========================================
+# Appearance
+# ========================================
+# Border settings
+default_border pixel 2
+default_floating_border pixel 2
+
+# Colors
+# Focused window
+client.focused          #4c7899 #4c7899 #ffffff #4c7899 #4c7899
+client.focused_inactive #333333 #5f676a #ffffff #484e50 #333333
+client.unfocused        #333333 #222222 #888888 #292d2e #333333
+client.urgent           #2f343a #900000 #ffffff #900000 #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+
+# Gap settings
+gaps inner 8
+gaps outer 4
+smart_gaps on
+smart_borders on
+
+# ========================================
+# Bars - Waybar
+# ========================================
+bar {
+    swaybar_command waybar
+}
+
+# ========================================
+# Startup Applications
+# ========================================
+# Notifications daemon
+exec mako
+
+# Wallpaper
+exec swaybg -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png -m fill 2>/dev/null || exec swaybg -c "#1a1a2e"
+
+# Idle daemon (lock screen & power management)
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+
+# Clipboard manager (if available)
+exec wl-paste --watch cliphist store 2>/dev/null || true
+
+# ========================================
+# Keybindings
+# ========================================
+
+# --- Launcher ---
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+d exec rofi -show window
+
+# --- Application shortcuts ---
+bindsym $mod+b exec $browser
+bindsym $mod+Shift+b exec $browser --new-window
+bindsym $mod+e exec $filemgr
+bindsym $mod+Shift+e exec ~/.local/bin/powermenu.sh
+
+# --- Screenshot tools ---
+bindsym Print exec ~/.local/bin/screenshot.sh full
+bindsym Ctrl+Print exec ~/.local/bin/screenshot.sh select
+bindsym Shift+Print exec ~/.local/bin/screenshot.sh clipboard
+
+# --- Window focus ---
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# --- Window movement ---
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# --- Workspace switching ---
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# --- Move container to workspace ---
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# --- Layout & Display ---
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+v layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+
+# --- System controls ---
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+q kill
+bindsym $mod+Escape exec swaylock -f -c 000000
+bindsym $mod+Tab workspace back_and_forth
+
+# --- Scratchpad ---
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# --- Resize mode ---
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym h resize shrink width 10 px
+    bindsym j resize grow height 10 px
+    bindsym k resize shrink height 10 px
+    bindsym l resize grow width 10 px
+
+    bindsym Left resize shrink width 10 px
+    bindsym Down resize grow height 10 px
+    bindsym Up resize shrink height 10 px
+    bindsym Right resize grow width 10 px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+# --- Media keys ---
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# --- Clipboard ---
+bindsym $mod+Shift+v exec ~/.local/bin/cliphist-view.sh
+
+# --- Screen recording ---
+bindsym $mod+Shift+s exec ~/.local/bin/screenshot.sh clipboard
+
+# ========================================
+# Window Rules
+# ========================================
+
+# Floating windows for dialogs
+for_window [window_type="dialog"] floating enable
+for_window [window_type="splash"] floating enable
+
+# File manager floating
+for_window [class="org.gnome.Nautilus"] floating enable
+
+# Make specific apps float
+for_window [title="Picture-in-Picture"] floating enable, move position cursor
+
+# ========================================
+# Autostart specific apps on workspaces
+# ========================================
+assign [class="Firefox"] 1
+assign [class="firefox"] 1
+assign [class="Code"] 2
+assign [class="code"] 2

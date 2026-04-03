@@ -1,0 +1,8 @@
+*
+!/.config/
+!/.config/**
+!/.bashrc
+!/.bash_profile
+!/.local/bin/
+!/.local/bin/**
+!/SWAY_GUIDE.md

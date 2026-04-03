@@ -1,0 +1,85 @@
+configuration {
+  modi: "drun,run,window";
+  lines: 8;
+  font: "JetBrains Mono Nerd Font Mono 11";
+  show-icons: true;
+  icon-theme: "Papirus";
+  icon-size: 20;
+  drun-display-format: "{icon} {name}";
+  display-drun: "  Apps";
+  terminal: "kitty";
+  sidebar: false;
+  sorting-method: "fzf";
+  hide-scrollbar: true;
+}
+
+/* Theme elements are defined directly, not wrapped in a theme block */
+
+window {
+  padding: 5;
+  border-radius: 10px;
+  border: 1;
+  border-color: #313244;
+}
+
+listview {
+  padding: 2px 0px 0px;
+  border: 0;
+  spacing: 2px;
+  fixed-height: 0;
+  lines: 8;
+}
+
+inputbar {
+  padding: 10px;
+}
+
+prompt {
+  text-color: #6c7086;
+  padding: 0px 8px 0px 0px;
+}
+
+entry {
+  text-color: #cdd6f4;
+}
+
+element {
+  padding: 6px;
+  spacing: 8px;
+  border: 0;
+}
+
+element-icon {
+  size: 20px;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+* {
+  background: #181825;
+  foreground: #cdd6f4;
+  background-color: #181825;
+  normal-foreground: #cdd6f4;
+  normal-background: #181825;
+  urgent-foreground: #f38ba8;
+  urgent-background: #181825;
+  active-foreground: #89b4fa;
+  active-background: #181825;
+  selected-normal-foreground: #181825;
+  selected-normal-background: #89b4fa;
+  selected-urgent-foreground: #181825;
+  selected-urgent-background: #f38ba8;
+  selected-active-foreground: #181825;
+  selected-active-background: #89b4fa;
+  alternate-normal-foreground: #a6adc8;
+  alternate-normal-background: #181825;
+  alternate-urgent-foreground: #f38ba8;
+  alternate-active-foreground: #89b4fa;
+  lightbg: #313244;
+  lightfg: #a6adc8;
+  red: #f38ba8;
+  blue: #89b4fa;
+  separatorcolor: #313244;
+}

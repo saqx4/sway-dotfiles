@@ -1,0 +1,30 @@
+# Mako Notification Daemon Configuration
+
+# Appearance
+font=monospace 12
+padding=10
+margin=10
+border-size=2
+border-radius=5
+anchor=top-right
+
+# Colors (Catppuccin Mocha theme)
+background-color=#1e1e2eDD
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=#89b4fa
+
+# Grouping
+group-by=app-name
+max-icon-size=32
+icons=1
+
+# Behavior
+default-timeout=5000
+max-history=50
+
+# Format
+format=<b>%s</b>\n%b
+
+# Layer
+layer=overlay

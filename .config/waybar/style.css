@@ -1,0 +1,151 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.95);
+    color: #cdd6f4;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    margin: 2px 3px 2px 3px;
+    padding: 1px 3px;
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    margin: 1px 2px;
+    color: #6c7086;
+    background: transparent;
+    border: none;
+    border-radius: 3px;
+}
+
+#workspaces button:hover {
+    color: #cdd6f4;
+    background: #313244;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: #89b4fa;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: #f38ba8;
+    color: #1e1e2e;
+}
+
+#bluetooth {
+    margin: 2px 3px;
+    padding: 2px 6px;
+    background: #313244;
+    color: #89dceb;
+}
+
+#bluetooth.disabled {
+    background: #45475a;
+    color: #6c7086;
+}
+
+#bluetooth.connected {
+    background: rgba(137, 180, 250, 0.2);
+    color: #89b4fa;
+}
+
+#window {
+    margin: 2px 6px;
+    padding: 2px 6px;
+    color: #cdd6f4;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    margin: 2px 3px;
+    padding: 2px 6px;
+    background: #313244;
+    color: #89b4fa;
+}
+
+#pulseaudio.muted {
+    background: #45475a;
+    color: #f38ba8;
+}
+
+#network {
+    margin: 2px 3px;
+    padding: 2px 6px;
+    background: #313244;
+    color: #a6e3a1;
+}
+
+#network.disconnected {
+    background: #45475a;
+    color: #f38ba8;
+}
+
+#battery {
+    margin: 2px 3px;
+    padding: 2px 6px;
+    background: #313244;
+    color: #a6e3a1;
+}
+
+#battery.critical {
+    background: #f38ba8;
+    color: #1e1e2e;
+    animation: blink 1s linear infinite;
+}
+
+#battery.charging {
+    background: #313244;
+    color: #f9e2af;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #1e1e2e;
+    }
+}
+
+#clock {
+    margin: 2px 3px 2px 2px;
+    padding: 2px 6px;
+    background: #313244;
+    color: #f9e2af;
+    font-weight: bold;
+}
+
+#custom-power {
+    margin: 2px 3px;
+    padding: 2px 8px;
+    background: #f38ba8;
+    color: #1e1e2e;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#custom-power:hover {
+    background: #eba0ac;
+}
+
+#tray {
+    margin: 2px 3px;
+    padding: 2px 6px;
+    background: #313244;
+}
+
+#mode {
+    background: #89b4fa;
+    color: #1e1e2e;
+    font-weight: bold;
+    margin: 2px 3px;
+    padding: 2px 6px;
+}
