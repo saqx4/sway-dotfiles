@@ -1,3 +1,5 @@
+@import url('/home/sasa/.config/waybar/colors.css');
+
 * {
     border: none;
     border-radius: 0;
@@ -7,12 +9,12 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.95);
-    color: #cdd6f4;
+    background: alpha(@background, 0.95);
+    color: @foreground;
 }
 
 #workspaces {
-    background: #1e1e2e;
+    background: @background;
     margin: 2px 3px 2px 3px;
     padding: 1px 3px;
 }
@@ -20,131 +22,131 @@ window#waybar {
 #workspaces button {
     padding: 2px 8px;
     margin: 1px 2px;
-    color: #6c7086;
+    color: @color8;
     background: transparent;
     border: none;
     border-radius: 3px;
 }
 
 #workspaces button:hover {
-    color: #cdd6f4;
-    background: #313244;
+    color: @foreground;
+    background: @color0;
 }
 
 #workspaces button.active {
-    color: #1e1e2e;
-    background: #89b4fa;
+    color: @background;
+    background: @color4;
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: #f38ba8;
-    color: #1e1e2e;
+    background: @color1;
+    color: @background;
 }
 
 #bluetooth {
     margin: 2px 3px;
     padding: 2px 6px;
-    background: #313244;
-    color: #89dceb;
+    background: @color0;
+    color: @color6;
 }
 
 #bluetooth.disabled {
-    background: #45475a;
-    color: #6c7086;
+    background: alpha(@color0, 0.5);
+    color: @color8;
 }
 
 #bluetooth.connected {
-    background: rgba(137, 180, 250, 0.2);
-    color: #89b4fa;
+    background: alpha(@color4, 0.2);
+    color: @color4;
 }
 
 #window {
     margin: 2px 6px;
     padding: 2px 6px;
-    color: #cdd6f4;
+    color: @foreground;
     font-weight: bold;
 }
 
 #pulseaudio {
     margin: 2px 3px;
     padding: 2px 6px;
-    background: #313244;
-    color: #89b4fa;
+    background: @color0;
+    color: @color4;
 }
 
 #pulseaudio.muted {
-    background: #45475a;
-    color: #f38ba8;
+    background: alpha(@color0, 0.5);
+    color: @color1;
 }
 
 #network {
     margin: 2px 3px;
     padding: 2px 6px;
-    background: #313244;
-    color: #a6e3a1;
+    background: @color0;
+    color: @color2;
 }
 
 #network.disconnected {
-    background: #45475a;
-    color: #f38ba8;
+    background: alpha(@color0, 0.5);
+    color: @color1;
 }
 
 #battery {
     margin: 2px 3px;
     padding: 2px 6px;
-    background: #313244;
-    color: #a6e3a1;
+    background: @color0;
+    color: @color2;
 }
 
 #battery.critical {
-    background: #f38ba8;
-    color: #1e1e2e;
+    background: @color1;
+    color: @background;
     animation: blink 1s linear infinite;
 }
 
 #battery.charging {
-    background: #313244;
-    color: #f9e2af;
+    background: @color0;
+    color: @color3;
 }
 
 @keyframes blink {
     to {
-        background-color: #f38ba8;
-        color: #1e1e2e;
+        background-color: @color1;
+        color: @background;
     }
 }
 
 #clock {
     margin: 2px 3px 2px 2px;
     padding: 2px 6px;
-    background: #313244;
-    color: #f9e2af;
+    background: @color0;
+    color: @color3;
     font-weight: bold;
 }
 
 #custom-power {
     margin: 2px 3px;
     padding: 2px 8px;
-    background: #f38ba8;
-    color: #1e1e2e;
+    background: @color1;
+    color: @background;
     font-weight: bold;
     font-size: 14px;
 }
 
 #custom-power:hover {
-    background: #eba0ac;
+    background: alpha(@color1, 0.8);
 }
 
 #tray {
     margin: 2px 3px;
     padding: 2px 6px;
-    background: #313244;
+    background: @color0;
 }
 
 #mode {
-    background: #89b4fa;
-    color: #1e1e2e;
+    background: @color4;
+    color: @background;
     font-weight: bold;
     margin: 2px 3px;
     padding: 2px 6px;

@@ -21,6 +21,13 @@ alias reloadsway='swaymsg reload'
 alias cliphist-view='cliphist list | rofi -dmenu | cliphist decode | wl-copy'
 alias swayedit='kitty -e nano ~/.config/sway/config'
 alias waybar-restart='killall waybar; waybar &'
+alias wal-change='~/.local/bin/wal-select.sh'
+alias wal-set='~/.local/bin/wal-set.sh'
+
+# Pywal colors
+if [ -f ~/.cache/wal/colors.sh ]; then
+    . ~/.cache/wal/colors.sh
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

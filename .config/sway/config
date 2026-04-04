@@ -1,7 +1,6 @@
 # Sway Configuration File
-# Daily driver setup
+# Colors managed by pywal - edit ~/.config/wal/templates/sway for changes
 
-# Default config fallback
 include /etc/sway/config.d/*
 
 # ========================================
@@ -24,7 +23,6 @@ input * {
     repeat_rate 50
 }
 
-# Touchpad configuration
 input type:touchpad {
     tap enabled
     natural_scroll enabled
@@ -36,27 +34,17 @@ input type:touchpad {
 floating_modifier $mod normal
 
 # ========================================
-# Output Configuration
+# Appearance - Colors from pywal
 # ========================================
-# Auto-detect displays (adjust if needed)
-# output * {
-#     bg #1a1a2e solid_color
-# }
-
-# ========================================
-# Appearance
-# ========================================
-# Border settings
 default_border pixel 2
 default_floating_border pixel 2
 
-# Colors
-# Focused window
-client.focused          #4c7899 #4c7899 #ffffff #4c7899 #4c7899
-client.focused_inactive #333333 #5f676a #ffffff #484e50 #333333
-client.unfocused        #333333 #222222 #888888 #292d2e #333333
-client.urgent           #2f343a #900000 #ffffff #900000 #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+# Auto-generated colors from wallpaper (pywal)
+client.focused          #6C6A49 #6C6A49 #c7c6c4 #6C6A49 #6C6A49
+client.focused_inactive #333333 #5f676a #c7c6c4 #484e50 #333333
+client.unfocused        #333333 #222222 #93774C #292d2e #333333
+client.urgent           #A26A3E #A26A3E #c7c6c4 #A26A3E #A26A3E
+client.placeholder      #000000 #0c0c0c #c7c6c4 #000000 #0c0c0c
 
 # Gap settings (no gaps)
 gaps inner 0
@@ -65,29 +53,20 @@ smart_gaps on
 smart_borders on
 
 # ========================================
-# Bars - Waybar
-# ========================================
-bar {
-    swaybar_command waybar
-}
-
-# ========================================
 # Startup Applications
 # ========================================
-# Notifications daemon
 exec mako
+exec swaybg -i /home/sasa/Pictures/Wallpapers/5m5kLI9.png -m fill
+exec waybar
 
-# Wallpaper (swaybg)
-exec swaybg -i /home/sasa/Pictures/Wallpapers/wallhaven-5ydvl1.jpg -m fill
-
-# Idle daemon (lock screen & power management)
+# Idle daemon
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
     timeout 600 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 000000'
 
-# Clipboard manager (if available)
+# Clipboard manager
 exec wl-paste --watch cliphist store 2>/dev/null || true
 
 # ========================================
@@ -98,6 +77,9 @@ exec wl-paste --watch cliphist store 2>/dev/null || true
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+d exec rofi -show window
+
+# --- Wallpaper ---
+bindsym $mod+w exec ~/.local/bin/wal-select.sh
 
 # --- Application shortcuts ---
 bindsym $mod+b exec $browser
@@ -205,15 +187,9 @@ bindsym $mod+Shift+s exec ~/.local/bin/screenshot.sh clipboard
 # ========================================
 # Window Rules
 # ========================================
-
-# Floating windows for dialogs
 for_window [window_type="dialog"] floating enable
 for_window [window_type="splash"] floating enable
-
-# File manager floating
 for_window [class="org.gnome.Nautilus"] floating enable
-
-# Make specific apps float
 for_window [title="Picture-in-Picture"] floating enable, move position cursor
 
 # ========================================
