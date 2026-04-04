@@ -9,3 +9,4 @@
 !/.local/bin/
 !/.local/bin/**
 !/SWAY_GUIDE.md
+!/install.sh
