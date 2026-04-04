@@ -14,37 +14,37 @@ configuration {
 }
 
 * {
-  background: #201d16;
-  foreground: #c7c6c4;
-  background-color: #201d16;
-  normal-foreground: #c7c6c4;
-  normal-background: #201d16;
-  urgent-foreground: #6C6A49;
-  urgent-background: #201d16;
-  active-foreground: #A26A3E;
-  active-background: #201d16;
-  selected-normal-foreground: #201d16;
-  selected-normal-background: #A26A3E;
-  selected-urgent-foreground: #201d16;
-  selected-urgent-background: #6C6A49;
-  selected-active-foreground: #201d16;
-  selected-active-background: #A26A3E;
-  alternate-normal-foreground: #93774C;
-  alternate-normal-background: #201d16;
-  alternate-urgent-foreground: #6C6A49;
-  alternate-active-foreground: #A26A3E;
-  lightbg: #201d16;
-  lightfg: #93774C;
-  red: #6C6A49;
-  blue: #A26A3E;
-  separatorcolor: #201d16;
+  background: #10121a;
+  foreground: #c3c3c5;
+  background-color: #10121a;
+  normal-foreground: #c3c3c5;
+  normal-background: #10121a;
+  urgent-foreground: #646578;
+  urgent-background: #10121a;
+  active-foreground: #89889C;
+  active-background: #10121a;
+  selected-normal-foreground: #10121a;
+  selected-normal-background: #89889C;
+  selected-urgent-foreground: #10121a;
+  selected-urgent-background: #646578;
+  selected-active-foreground: #10121a;
+  selected-active-background: #89889C;
+  alternate-normal-foreground: #9793A5;
+  alternate-normal-background: #10121a;
+  alternate-urgent-foreground: #646578;
+  alternate-active-foreground: #89889C;
+  lightbg: #10121a;
+  lightfg: #9793A5;
+  red: #646578;
+  blue: #89889C;
+  separatorcolor: #10121a;
 }
 
 window {
   padding: 5;
   border-radius: 10px;
   border: 1;
-  border-color: #201d16;
+  border-color: #10121a;
 }
 
 listview {
@@ -60,12 +60,12 @@ inputbar {
 }
 
 prompt {
-  text-color: #756f5f;
+  text-color: #5c5f70;
   padding: 0px 8px 0px 0px;
 }
 
 entry {
-  text-color: #c7c6c4;
+  text-color: #c3c3c5;
 }
 
 element {

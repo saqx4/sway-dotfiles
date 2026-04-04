@@ -40,11 +40,11 @@ default_border pixel 2
 default_floating_border pixel 2
 
 # Auto-generated colors from wallpaper (pywal)
-client.focused          #6C6A49 #6C6A49 #c7c6c4 #6C6A49 #6C6A49
-client.focused_inactive #333333 #5f676a #c7c6c4 #484e50 #333333
-client.unfocused        #333333 #222222 #93774C #292d2e #333333
-client.urgent           #A26A3E #A26A3E #c7c6c4 #A26A3E #A26A3E
-client.placeholder      #000000 #0c0c0c #c7c6c4 #000000 #0c0c0c
+client.focused          #646578 #646578 #c3c3c5 #646578 #646578
+client.focused_inactive #333333 #5f676a #c3c3c5 #484e50 #333333
+client.unfocused        #333333 #222222 #9793A5 #292d2e #333333
+client.urgent           #89889C #89889C #c3c3c5 #89889C #89889C
+client.placeholder      #000000 #0c0c0c #c3c3c5 #000000 #0c0c0c
 
 # Gap settings (no gaps)
 gaps inner 0
@@ -56,7 +56,7 @@ smart_borders on
 # Startup Applications
 # ========================================
 exec mako
-exec swaybg -i /home/sasa/Pictures/Wallpapers/5m5kLI9.png -m fill
+exec swaybg -i /home/sasa/Pictures/Wallpapers/general-1749388154.webp -m fill
 exec waybar
 
 # Idle daemon
@@ -136,10 +136,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 
 # --- System controls ---
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec swaymsg reload && notify-send "Sway" "Config reloaded"
 bindsym $mod+Shift+r restart
 bindsym $mod+q kill
-bindsym $mod+Escape exec swaylock -f -c 000000
+bindsym $mod+Shift+x exec swaylock -f -c 000000
 bindsym $mod+Tab workspace back_and_forth
 
 # --- Scratchpad ---
