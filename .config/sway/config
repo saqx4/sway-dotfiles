@@ -59,7 +59,7 @@ client.urgent           #2f343a #900000 #ffffff #900000 #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 # Gap settings
-gaps inner 8
+gaps inner 6
 gaps outer 4
 smart_gaps on
 smart_borders on
@@ -77,8 +77,8 @@ bar {
 # Notifications daemon
 exec mako
 
-# Wallpaper (sway native)
-output VGA-1 bg /home/sasa/Pictures/Wallpapers/wallhaven-5ydvl1.jpg fill
+# Wallpaper (swaybg)
+exec swaybg -i /home/sasa/Pictures/Wallpapers/wallhaven-5ydvl1.jpg -m fill
 
 # Idle daemon (lock screen & power management)
 exec swayidle -w \

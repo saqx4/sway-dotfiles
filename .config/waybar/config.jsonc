@@ -65,7 +65,8 @@
         "tooltip-format": "{ifname} via {gwaddri}",
         "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "  {ipaddr}",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "/home/sasa/.local/bin/wifi-select.sh"
     },
 
     "battery": {
